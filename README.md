@@ -65,7 +65,7 @@ This repository contains my submissions for the AIRL internship coding assignmen
 **Final Validation Accuracy: 83.33%** 
 
 
-![Training Progress](images/image.png)
+![Training Progress](https://github.com/Bhuvana2488/airl-cv/tree/main/images)
 
 **Key Observations:**
 - Good generalization with validation accuracy of 83.33%
