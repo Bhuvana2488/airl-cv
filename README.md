@@ -47,7 +47,7 @@ This repository contains my submissions for the AIRL internship coding assignmen
 
 | Metric | Value |
 |--------|-------|
-| Best Test Accuracy | ≈ 89.7% |
+| Best Test Accuracy |  83.33% |
 
 ---
 
@@ -60,7 +60,17 @@ This repository contains my submissions for the AIRL internship coding assignmen
 - **Dropout (0.1)**: Slightly boosted validation accuracy (~+1%) and stabilized training.
 
 ---
+## 📈 Q1 — Training Results
 
+**Final Validation Accuracy: 83.33%** 
+
+
+![Training Progress](images/image.png)
+
+**Key Observations:**
+- Good generalization with validation accuracy of 83.33%
+- Stable training progression without significant overfitting
+- Consistent improvement over 80 epochs of training
 ## 📁 Repository Structure
 AIRL-Assignment/
 ├── q1.ipynb # ViT implementation & training on CIFAR-10
