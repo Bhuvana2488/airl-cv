@@ -71,6 +71,64 @@ This repository contains my submissions for the AIRL internship coding assignmen
 - Good generalization with validation accuracy of 83.33%
 - Stable training progression without significant overfitting
 - Consistent improvement over 80 epochs of training
+
+# Q2 — Text-Driven Image Segmentation with SAM 2
+
+## 🎯 Goal
+Perform text-prompted segmentation of objects in images using SAM 2 with text-to-mask conversion via GroundingDINO.
+
+## 🚀 Pipeline Overview
+
+### Step-by-Step Process:
+1. **Image Loading** → Load input image from file or URL
+2. **Text-to-Box Detection** → Use GroundingDINO to detect objects based on text prompt
+3. **Mask Generation** → Feed bounding boxes to SAM 2 for precise segmentation
+4. **Result Visualization** → Display original image, detected boxes, and final masks
+
+### Key Components:
+- **GroundingDINO**: Converts text prompts to bounding boxes
+- **SAM 2 (Segment Anything Model 2)**: Generates pixel-perfect masks from boxes
+- **Supervision**: Provides visualization utilities
+
+## 📊 Performance & Results
+
+### Image Processing:
+- **Processing Time**: ~10-30 seconds per image
+- **Detection Accuracy**: Good object localization with text prompts
+- **Segmentation Quality**: High-precision masks with clear boundaries
+
+### Video Processing (Bonus):
+- **Processing Time**: ~1 hour for 10-30 second clips
+- **Feature**: Frame-by-frame mask propagation using SAM 2
+- **Output**: Consistent object tracking across video frames
+
+## ⚙️ Technical Details
+
+### Model Configuration:
+- **SAM 2**: `sam2_hiera_s.yaml` with small checkpoint
+- **GroundingDINO**: `SwinT_OGC` backbone
+- **Detection Threshold**: 0.25 (configurable)
+
+### Key Functions:
+- `text_driven_segmentation()`: Main pipeline for single prompt
+- `multi_object_segmentation()`: Handle multiple object types
+- `analyze_segmentation_quality()`: Quantitative mask analysis
+- `test_thresholds()`: Sensitivity analysis for detection
+
+## 🎨 Example Usage
+
+```python
+# Single object segmentation
+image_url = "https://example.com/image.jpg"
+masks, boxes, labels = text_driven_segmentation(image_url, "car")
+
+# Multiple objects
+prompts = ["car", "person", "tree"]
+multi_object_segmentation(image_url, prompts)
+
+# Quality analysis
+analyze_segmentation_quality(masks, boxes, image.shape)
+
 ## 📁 Repository Structure
 AIRL-Assignment/
 ├── q1.ipynb # ViT implementation & training on CIFAR-10
